@@ -14,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.ubivelox.gaia.GaiaException;
 
 import exception.UbiveloxException;
-import tlvparser.TLVParser;
 
 /**
  * Handles requests for the application home page.
@@ -41,21 +40,10 @@ public class HomeController
     {
 
         mav.setViewName("home");
-        final String text = request.getParameter("text");
 
-        System.out.println(text);
+        // final String result = TLVParser.parse(text);
 
-        try
-        {
-            final String result = TLVParser.parse(text);
-
-            mav.addObject(result);
-
-        }
-        catch ( final Exception e )
-        {
-            // TODO: handle exception
-        }
+        // mav.addObject(result);
 
         return mav;
     }
